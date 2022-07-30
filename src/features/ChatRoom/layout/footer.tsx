@@ -14,7 +14,7 @@ export function Footer() {
                         id: P.uuidv4(),
                         content: data.message,
                         from: 'current_user_id',
-                        to: 'axcvxcvd',
+                        to: '-',
                         timestamp: Date.now(),
                     })
                     form.setValue('message', '')

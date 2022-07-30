@@ -12,6 +12,7 @@ export function FooterInput(props: { name: string }) {
                         type="text"
                         placeholder="Aa"
                         name="input"
+                        autoComplete="off"
                     />
                 )
             }}

@@ -6,7 +6,6 @@ import { useMessageList } from '../features/ChatRoom/context/MessagesContext'
 
 export function ChatBox(props: {}) {
     const messages = useMessageList()
-    console.log(groupMessages(messages))
     return (
         <>
             <div className="h-screen w-full flex antialiased text-gray-200 bg-gray-900 overflow-hidden">
@@ -14,7 +13,6 @@ export function ChatBox(props: {}) {
                     <main className="flex-grow flex flex-row min-h-0">
                         <section className="flex flex-col flex-auto border-l border-gray-800">
                             <Header></Header>
-                            {messages.length}
                             <ChatBody {...groupMessages(messages)}></ChatBody>
                             <Footer></Footer>
                             <div className="chat-footer flex-none"></div>
