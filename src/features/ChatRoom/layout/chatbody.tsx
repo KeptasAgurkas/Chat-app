@@ -1,12 +1,18 @@
 import { GroupedMessages } from '../types'
 import { ReceiverMessageGroup } from '../receiver'
 import { SenderMessageGroupRow } from '../sender'
+import { useRef } from 'react'
 
 export function ChatBody(props: GroupedMessages) {
     const userId = 'current_user_id'
+    const ref = useRef<HTMLDivElement>(null)
 
+    ref.current?.scrollTo({
+        top: ref.current.scrollHeight,
+        behavior: 'smooth',
+    })
     return (
-        <div className="chat-body p-4 flex-1 overflow-y-scroll">
+        <div className="chat-body p-4 flex-1 overflow-y-scroll" ref={ref}>
             {props.messageGroups.map((messageGroup) => {
                 return (
                     <>

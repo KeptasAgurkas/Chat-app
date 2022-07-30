@@ -7,13 +7,13 @@ import {
 } from 'react'
 import * as P from 'ts-prime'
 import * as DF from 'date-fns'
-import { useGun } from '../../Gun'
 import { Message } from '../types'
-import { useMatch } from '@tanstack/react-location'
-
+import { useMatch, useSearch } from '@tanstack/react-location'
+import { useGun } from '../../Gun'
 function useMessages() {
     const mat = useMatch()
-    const roomId = '333'
+    console.log('LOCATION', mat)
+    const roomId = mat.params.id
     const db = useGun()
     const [fromMessages, setFrom] = useState<Record<string, Message>>({})
     const dates = getDates(new Date())

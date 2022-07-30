@@ -9,6 +9,7 @@ import { ChatBox } from './Pages/chatbox'
 import ChatName from './Pages/chatname'
 import { absolutPath, ROUTES } from './utils/const'
 import RoomName from './Pages/roomname'
+import { MessageProvider } from './features/ChatRoom/context/MessagesContext'
 
 const location = new ReactLocation()
 
@@ -47,7 +48,9 @@ export function Routing() {
                     path: '/room/:id',
                     element: (
                         <UserGuard>
-                            <Outlet></Outlet>
+                            <MessageProvider>
+                                <Outlet></Outlet>
+                            </MessageProvider>
                         </UserGuard>
                     ),
                     children: [

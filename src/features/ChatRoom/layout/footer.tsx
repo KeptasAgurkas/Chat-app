@@ -1,29 +1,29 @@
-import { useEffect, useState } from 'react'
 import { FormProvider, Message, useForm } from 'react-hook-form'
-import { GunProvider, useGun } from '../../Gun/gun-store'
 import { useMessageContext } from '../context/MessagesContext'
 import * as P from 'ts-prime'
-import { InputField } from '../../../Pages/roomname'
+import { FooterInput } from './s'
 export function Footer() {
     const messageContext = useMessageContext()
     const form = useForm<{ message: string }>()
     return (
         <FormProvider {...form}>
             <form
-                onSubmit={form.handleSubmit((c) => {
+                onSubmit={form.handleSubmit((data) => {
+                    console.log('FORM', data)
                     messageContext.sendMessage({
                         id: P.uuidv4(),
-                        content: c.message,
-                        from: 'asd',
-                        to: 'asd',
+                        content: data.message,
+                        from: 'current_user_id',
+                        to: 'axcvxcvd',
                         timestamp: Date.now(),
                     })
+                    form.setValue('message', '')
                 })}
             >
                 <div className="flex flex-row items-center p-4">
                     <div className="relative flex-grow">
                         <label>
-                            <InputField name="message"></InputField>
+                            <FooterInput name="message"></FooterInput>
                             <button
                                 type="submit"
                                 className="absolute top-0 right-0 mt-2 mr-3 flex flex-shrink-0 focus:outline-none block text-blue-600 hover:text-blue-700 w-6 h-6"
