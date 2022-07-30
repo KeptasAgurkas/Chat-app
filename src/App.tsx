@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import './App.css'
-import { ChatBox } from './components/chatbox'
-import { GunProvider, useGun } from './hooks/gun-store'
-import { Message } from './types'
+import './assets/App.css'
+import { ChatBox } from './Pages/chatbox'
+import { GunProvider, useGun } from './features/Gun/gun-store'
+import { Message } from './features/ChatRoom/types'
 import * as P from 'ts-prime'
-import { Routing } from './Routes/route'
+import { Routing } from './route'
+import { MessageProvider } from './features/ChatRoom/context/MessagesContext'
 function useMessages() {
     const db = useGun()
     const [fromMessages, setFrom] = useState<Record<string, Message>>({})
@@ -37,45 +38,12 @@ function useMessages() {
     }
 }
 
-const userId = localStorage.getItem('user')
-
-function Content() {
-    const messages = useMessages()
-
-    return (
-        <>
-            {/*<Routing></Routing>
-            {P.sortBy(
-                Object.entries(messages.message),
-                ([_, v]) => v.timestamp
-            ).map(([id, value]) => {
-                return (
-                    <div>
-                        <div>{value.from}</div>
-                        <div>{value.content}</div>
-                    </div>
-                )
-            })}
-            <button
-                onClick={() => {
-                    messages.sendMessage({
-                        content: Date.now().toString(36),
-                        from: userId || '',
-                        to: 'andrius',
-                        timestamp: Date.now(),
-                    })
-                }}
-            >
-                button
-            </button>*/}
-        </>
-    )
-}
-
 function App() {
     return (
         <GunProvider>
-            <Content></Content>
+            <MessageProvider>
+                <Routing></Routing>
+            </MessageProvider>
         </GunProvider>
     )
 }

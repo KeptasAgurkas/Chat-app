@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { MessageGroup } from '../types'
+import { MessageGroup } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
     return (

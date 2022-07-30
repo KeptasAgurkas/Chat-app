@@ -1,6 +1,6 @@
 import { NativeStackView } from '@react-navigation/native-stack'
 import { parseWithOptions } from 'date-fns/fp'
-import { Avatar } from '../Routes/chatname'
+import { Avatar } from '../../../Pages/chatname'
 
 function useName() {
     let nick = localStorage.getItem('user')

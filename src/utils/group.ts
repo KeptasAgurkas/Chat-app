@@ -4,7 +4,6 @@ export function groupByNextItem<T>(items: T[], fn: (data: T) => string) {
     let group: T[][] = []
 
     for (let i = 0; i <= items.length - 1; i++) {
-        console.log(i, tmpGroup)
         if (i === 0) {
             tmpGroup.push(items[i])
             continue
@@ -21,7 +20,7 @@ export function groupByNextItem<T>(items: T[], fn: (data: T) => string) {
         prev = items[i]
     }
 
-    return group
+    return [...group, tmpGroup]
 }
 
 export function groupByType<T>(items: T[], fn: (data: T) => string) {

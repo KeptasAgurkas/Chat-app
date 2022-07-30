@@ -1,6 +1,6 @@
 import { GroupedMessages } from '../types'
-import { ReceiverMessageGroup } from './receiver'
-import { SenderMessageGroupRow } from './sender'
+import { ReceiverMessageGroup } from '../receiver'
+import { SenderMessageGroupRow } from '../sender'
 
 export function ChatBody(props: GroupedMessages) {
     const userId = 'current_user_id'
@@ -10,24 +10,25 @@ export function ChatBody(props: GroupedMessages) {
             {props.messageGroups.map((messageGroup) => {
                 return (
                     <>
-                        {messageGroup.groups.map((m) => {
+                        <p className="p-4 text-center text-sm text-gray-500">
+                            {messageGroup.day}
+                        </p>
+                        {messageGroup.groups.map((m, index) => {
                             if (m.from === userId) {
                                 return (
                                     <ReceiverMessageGroup
+                                        key={index}
                                         {...m}
                                     ></ReceiverMessageGroup>
                                 )
                             }
                             return (
                                 <SenderMessageGroupRow
+                                    key={index}
                                     {...m}
                                 ></SenderMessageGroupRow>
                             )
                         })}
-
-                        <p className="p-4 text-center text-sm text-gray-500">
-                            {messageGroup.day}
-                        </p>
                     </>
                 )
             })}

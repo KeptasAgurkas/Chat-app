@@ -1,4 +1,5 @@
 export interface Message {
+    id: string
     content: string
     from: string
     to: string
@@ -10,7 +11,7 @@ export interface BaseMessage {
 }
 export interface MessageGroup {
     from: string
-    messages: BaseMessage[]
+    messages: Message[]
 }
 
 export interface MessageDayGroup {

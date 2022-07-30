@@ -5,10 +5,10 @@ import {
     Outlet,
 } from '@tanstack/react-location'
 import { PropsWithChildren } from 'react'
-import { ChatBox } from '../components/chatbox'
-import ChatName from './chatname'
-import { absolutPath, ROUTES } from './const'
-import RoomName from './roomname'
+import { ChatBox } from './Pages/chatbox'
+import ChatName from './Pages/chatname'
+import { absolutPath, ROUTES } from './utils/const'
+import RoomName from './Pages/roomname'
 
 const location = new ReactLocation()
 

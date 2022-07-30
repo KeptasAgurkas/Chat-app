@@ -1,1 +1,1 @@
-export * from './header'
+export * from '../features/ChatRoom/layout/header'

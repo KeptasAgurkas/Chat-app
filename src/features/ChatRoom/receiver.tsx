@@ -1,5 +1,5 @@
 import classnames from 'classnames'
-import { MessageGroup } from '../types'
+import { MessageGroup } from './types'
 
 export function ReceiverMessageGroup(props: MessageGroup) {
     return (
@@ -9,7 +9,10 @@ export function ReceiverMessageGroup(props: MessageGroup) {
                     const isFirst = index === 0
                     const isLast = arr.length - 1 === index
                     return (
-                        <div className="flex items-center flex-row-reverse group">
+                        <div
+                            key={message.id}
+                            className="flex items-center flex-row-reverse group"
+                        >
                             <p
                                 className={classnames(
                                     'text-right',

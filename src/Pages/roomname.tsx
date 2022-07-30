@@ -1,8 +1,8 @@
 import { useNavigate } from '@tanstack/react-location'
 import { Controller, FormProvider, useForm } from 'react-hook-form'
-import { absolutPath, ROUTES } from './const'
+import { absolutPath, ROUTES } from '../utils/const'
 
-function InputField(props: { name: string }) {
+export function InputField(props: { name: string }) {
     return (
         <Controller
             name={props.name}
