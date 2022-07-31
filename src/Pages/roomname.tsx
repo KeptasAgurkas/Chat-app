@@ -14,6 +14,7 @@ export function InputField(props: { name: string }) {
                             type="text"
                             className="bg-gray-400 h-14 rounded focus:bg-white placeholder:text-white px-5 text-center focus:text-black font-"
                             placeholder="exp.: 123"
+                            autoComplete="off"
                         />
                         {fieldState.error && (
                             <span>{fieldState.error.message}</span>

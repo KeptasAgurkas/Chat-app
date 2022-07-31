@@ -1,16 +1,6 @@
 import { useNavigate } from '@tanstack/react-location'
 import { SetStateAction, useState } from 'react'
 import { Avatar } from '../features/ChatRoom/components/Avatar'
-// export function Avatar(props: { name: string }) {
-//     return (
-//         <img
-//             src={`https://robohash.org/${props.name}`}
-//             alt="Icon"
-//             width="128"
-//             height="128"
-//         />
-//     )
-// }
 
 function ChatName() {
     const [nick, setNick] = useState<string>('')
@@ -34,6 +24,7 @@ function ChatName() {
                         placeholder="exp.: KeptasAgurkas"
                         value={nick}
                         onChange={onChangeHandler}
+                        autoComplete="off"
                     />
                     <button
                         className="border border-gray-800 bg-blue-900 rounded hover:bg-blue-700 px-2 py-1"
