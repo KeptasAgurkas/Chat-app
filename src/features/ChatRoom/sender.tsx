@@ -1,12 +1,17 @@
 import classnames from 'classnames'
 import { Avatar } from './components/Avatar'
+import { useName } from './components/UserID'
 import { MessageGroup } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
+    const userId = useName()
     return (
         <div className="flex flex-row justify-start">
             <div className="w-8 h-8 relative flex flex-shrink-0 mr-4">
-                <Avatar />
+                <div className="flex flex-col justify-center items-center">
+                    <Avatar />
+                    <span className="text-xs">{userId}</span>
+                </div>
             </div>
             <div className="messages text-sm text-gray-700 grid grid-flow-row gap-2">
                 {props.messages.map((message, index, arr) => {
