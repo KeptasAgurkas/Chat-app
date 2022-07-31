@@ -8,7 +8,7 @@ export function SenderMessageGroupRow(props: MessageGroup) {
                 <img
                     className="shadow-md rounded-full w-full h-full object-cover"
                     src="https://randomuser.me/api/portraits/women/33.jpg"
-                    alt="Woman"
+                    alt="Sender"
                 />
             </div>
             <div className="messages text-sm text-gray-700 grid grid-flow-row gap-2">

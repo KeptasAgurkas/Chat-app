@@ -1,12 +1,5 @@
-import { NativeStackView } from '@react-navigation/native-stack'
-import { parseWithOptions } from 'date-fns/fp'
 import { Avatar } from '../../../Pages/chatname'
-
-function useName() {
-    let nick = localStorage.getItem('user')
-    if (nick) return nick
-    throw new Error('missing nickname')
-}
+import { useName } from '../components/UserID'
 
 export function Header() {
     const name = useName()

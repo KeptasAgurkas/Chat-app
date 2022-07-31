@@ -1,20 +1,21 @@
 import { FormProvider, Message, useForm } from 'react-hook-form'
 import { useMessageContext } from '../context/MessagesContext'
 import * as P from 'ts-prime'
-import { FooterInput } from './s'
+import { FooterInput } from './FooterInput'
+import { useName } from '../components/UserID'
+
 export function Footer() {
+    const userId = useName()
     const messageContext = useMessageContext()
     const form = useForm<{ message: string }>()
     return (
         <FormProvider {...form}>
             <form
                 onSubmit={form.handleSubmit((data) => {
-                    console.log('FORM', data)
                     messageContext.sendMessage({
                         id: P.uuidv4(),
                         content: data.message,
-                        from: 'current_user_id',
-                        to: '-',
+                        from: userId,
                         timestamp: Date.now(),
                     })
                     form.setValue('message', '')

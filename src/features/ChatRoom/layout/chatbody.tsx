@@ -2,9 +2,10 @@ import { GroupedMessages } from '../types'
 import { ReceiverMessageGroup } from '../receiver'
 import { SenderMessageGroupRow } from '../sender'
 import { useRef } from 'react'
+import { useName } from '../components/UserID'
 
 export function ChatBody(props: GroupedMessages) {
-    const userId = 'current_user_id'
+    const userId = useName()
     const ref = useRef<HTMLDivElement>(null)
 
     ref.current?.scrollTo({
