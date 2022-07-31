@@ -1,15 +1,12 @@
 import classnames from 'classnames'
+import { Avatar } from './components/Avatar'
 import { MessageGroup } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
     return (
         <div className="flex flex-row justify-start">
             <div className="w-8 h-8 relative flex flex-shrink-0 mr-4">
-                <img
-                    className="shadow-md rounded-full w-full h-full object-cover"
-                    src="https://randomuser.me/api/portraits/women/33.jpg"
-                    alt="Sender"
-                />
+                <Avatar />
             </div>
             <div className="messages text-sm text-gray-700 grid grid-flow-row gap-2">
                 {props.messages.map((message, index, arr) => {

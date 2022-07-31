@@ -1,15 +1,16 @@
 import { useNavigate } from '@tanstack/react-location'
 import { SetStateAction, useState } from 'react'
-export function Avatar(props: { name: string }) {
-    return (
-        <img
-            src={`https://robohash.org/${props.name}`}
-            alt="Icon"
-            width="128"
-            height="128"
-        />
-    )
-}
+import { Avatar } from '../features/ChatRoom/components/Avatar'
+// export function Avatar(props: { name: string }) {
+//     return (
+//         <img
+//             src={`https://robohash.org/${props.name}`}
+//             alt="Icon"
+//             width="128"
+//             height="128"
+//         />
+//     )
+// }
 
 function ChatName() {
     const [nick, setNick] = useState<string>('')
@@ -26,7 +27,7 @@ function ChatName() {
                     Set your name
                 </div>
                 <div className="flex-row space-x-4">
-                    <Avatar name={nick}></Avatar>
+                    <Avatar></Avatar>
                     <input
                         type="text"
                         className="bg-gray-400 rounded focus:bg-white placeholder:text-white px-5 py-1 text-center focus:text-black font-"
