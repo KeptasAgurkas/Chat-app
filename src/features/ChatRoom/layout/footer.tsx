@@ -18,8 +18,8 @@ export function Footer() {
                         from: userId,
                         timestamp: Date.now(),
                     })
-
-                    form.setValue('message', '')
+                    if (data.message === '') return form.setError
+                    else form.setValue('message', '')
                 })}
             >
                 <div className="flex flex-row items-center p-4">

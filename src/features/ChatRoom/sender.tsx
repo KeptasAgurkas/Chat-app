@@ -1,6 +1,7 @@
 import classnames from 'classnames'
 import { Avatar } from './components/Avatar'
 import { useName } from './components/UserID'
+import { useMessageContext } from './context/MessagesContext'
 import { MessageGroup } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
