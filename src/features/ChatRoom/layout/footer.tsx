@@ -8,18 +8,21 @@ export function Footer() {
     const userId = useName()
     const messageContext = useMessageContext()
     const form = useForm<{ message: string }>()
+
     return (
         <FormProvider {...form}>
             <form
                 onSubmit={form.handleSubmit((data) => {
+                    if (data.message === '' || data.message == null)
+                        return false
                     messageContext.sendMessage({
                         id: P.uuidv4(),
                         content: data.message,
                         from: userId,
                         timestamp: Date.now(),
                     })
-                    if (data.message === '') return form.setError
-                    else form.setValue('message', '')
+                    form.setValue('message', '')
+                    console.log(userId)
                 })}
             >
                 <div className="flex flex-row items-center p-4">

@@ -1,4 +1,4 @@
-import { Controller, useForm } from 'react-hook-form'
+import { Controller } from 'react-hook-form'
 export function FooterInput(props: { name: string }) {
     return (
         <Controller

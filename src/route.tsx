@@ -15,7 +15,7 @@ const location = new ReactLocation()
 
 function UserGuard(props: PropsWithChildren<{}>) {
     const user = localStorage.getItem('user')
-    if (user == null)
+    if (user == null || user === '')
         return <Navigate to={absolutPath(ROUTES.chatName.root())}></Navigate>
 
     return <>{props.children}</>
