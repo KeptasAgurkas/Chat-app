@@ -6,6 +6,7 @@ import { MessageGroup } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
     const userId = useName()
+    const messageContext = useMessageContext()
     return (
         <div className="flex flex-row justify-start">
             <div className="w-8 h-8 relative flex flex-shrink-0 mr-4">
