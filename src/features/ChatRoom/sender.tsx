@@ -5,14 +5,13 @@ import { useMessageContext } from './context/MessagesContext'
 import { MessageGroup } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
-    const userId = useName()
     const messageContext = useMessageContext()
     return (
         <div className="flex flex-row justify-start">
             <div className="w-8 h-8 relative flex flex-shrink-0 mr-4">
                 <div className="flex flex-col justify-center items-center">
-                    <Avatar />
-                    <span className="text-xs">{userId}</span>
+                    <Avatar userName={props.from} />
+                    <span className="text-xs">{props.from}</span>
                 </div>
             </div>
             <div className="messages text-sm text-gray-700 grid grid-flow-row gap-2">

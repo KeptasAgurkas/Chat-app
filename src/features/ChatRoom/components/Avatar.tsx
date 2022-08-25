@@ -1,11 +1,9 @@
 import { useName } from './UserID'
 
-export function Avatar() {
-    const userId = useName()
-
+export function Avatar(props: { userName: string }) {
     return (
         <img
-            src={`https://robohash.org/${userId}`}
+            src={`https://robohash.org/${props.userName || '123'}`}
             alt="Icon"
             width="128"
             height="128"

@@ -4,7 +4,6 @@ import { Avatar } from '../features/ChatRoom/components/Avatar'
 import { useName } from '../features/ChatRoom/components/UserID'
 
 function ChatName() {
-    const userId = useName()
     const [nick, setNick] = useState<string>('')
     function onChangeHandler(event: {
         target: { value: SetStateAction<string> }
@@ -19,7 +18,7 @@ function ChatName() {
                     Set your name
                 </div>
                 <div className="flex-row space-x-4">
-                    <Avatar></Avatar>
+                    <Avatar userName={nick}></Avatar>
                     <input
                         type="text"
                         className="bg-gray-400 rounded focus:bg-white placeholder:text-white px-5 py-1 text-center focus:text-black font-"
