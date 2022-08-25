@@ -1,4 +1,3 @@
-import { useMessageContext } from '../context/MessagesContext'
 import { useName } from './UserID'
 
 export function Avatar() {
