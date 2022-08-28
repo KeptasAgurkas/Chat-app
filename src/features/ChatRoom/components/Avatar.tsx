@@ -1,5 +1,3 @@
-import { useName } from './UserID'
-
 export function Avatar(props: { userName: string }) {
     return (
         <img

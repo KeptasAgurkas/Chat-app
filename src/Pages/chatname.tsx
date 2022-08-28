@@ -1,7 +1,6 @@
 import { useNavigate } from '@tanstack/react-location'
 import { SetStateAction, useState } from 'react'
 import { Avatar } from '../features/ChatRoom/components/Avatar'
-import { useName } from '../features/ChatRoom/components/UserID'
 
 function ChatName() {
     const [nick, setNick] = useState<string>('')

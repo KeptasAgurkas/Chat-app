@@ -4,7 +4,7 @@ import { Footer } from '../features/ChatRoom/layout/footer'
 import { Header } from '../features/ChatRoom/layout/header'
 import { useMessageList } from '../features/ChatRoom/context/MessagesContext'
 
-export function ChatBox(props: {}) {
+export function ChatBox() {
     const messages = useMessageList()
     return (
         <>

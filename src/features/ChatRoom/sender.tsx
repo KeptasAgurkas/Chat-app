@@ -1,15 +1,14 @@
 import classnames from 'classnames'
 import { Avatar } from './components/Avatar'
-import { useName } from './components/UserID'
 import { useMessageContext } from './context/MessagesContext'
-import { MessageGroup } from './types'
+import { MessageGroup, Message } from './types'
 
 export function SenderMessageGroupRow(props: MessageGroup) {
     const messageContext = useMessageContext()
     return (
         <div className="flex flex-row justify-start">
             <div className="w-8 h-8 relative flex flex-shrink-0 mr-4">
-                <div className="flex flex-col justify-center items-center">
+                <div className="flex flex-col justify-center items-center mt-10">
                     <Avatar userName={props.from} />
                     <span className="text-xs">{props.from}</span>
                 </div>
@@ -22,17 +21,19 @@ export function SenderMessageGroupRow(props: MessageGroup) {
                         <div className="flex items-center group">
                             <p
                                 className={classnames(
-                                    'text-left',
+                                    'text-left ',
                                     {
-                                        ['rounded-t-full rounded-r-full']:
+                                        [' rounded-t-full rounded-r-full']:
                                             !isLast && isFirst,
-                                        ['rounded-full']: isLast && isFirst,
-                                        ['rounded-r-full']: !isLast && !isFirst,
-                                        ['rounded-b-full rounded-r-full']:
+                                        [' rounded-full']: isLast && isFirst,
+                                        ['  rounded-r-full']:
+                                            !isLast && !isFirst,
+                                        [' rounded-b-full rounded-r-full']:
                                             !isFirst && isLast,
+                                        ['mt-5']: isFirst,
                                     },
 
-                                    'px-6 py-3 bg-gray-800 max-w-xs lg:max-w-md text-gray-200'
+                                    ' px-6 py-3 bg-gray-800 max-w-xs lg:max-w-md text-gray-200'
                                 )}
                             >
                                 {message.content}
